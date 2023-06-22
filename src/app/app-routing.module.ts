@@ -1,37 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserRoutingModule } from './user/user.routing.module';
-import { CategoryRoutingModule } from './category/category.routing.module';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/user/login',
     pathMatch:'full'
   },
-  // {
-  //   path: 'login',
-  //   component:LoginComponent
-  // },
-  // {
-  //   path: 'registration',
-  //   component:RegistrationComponent
-  // },
-  // {
-  //   path: 'add-category',
-  //   component:AddCategoryComponent
-  // },
-  // {
-  //   path: 'categories',
-  //   component:DisplayCategoryComponent
-  // }
+  {
+    path: 'user',
+    loadChildren: ()=> import('./user/user.module').then(m=>m.UserModule)
+  },
+  {
+    path: 'categories',
+    loadChildren:()=>import('./category/category.module').then(m=>m.CategoryModule)
+  }
+
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    UserRoutingModule,
-    CategoryRoutingModule
   ],
   exports: [RouterModule]
 })

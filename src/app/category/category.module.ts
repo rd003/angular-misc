@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { DisplayCategoryComponent } from './components/display-category/display-category.component';
+import { CategoryRoutingModule } from './category.routing.module';
 
 
 
@@ -11,7 +12,8 @@ import { DisplayCategoryComponent } from './components/display-category/display-
     DisplayCategoryComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CategoryRoutingModule
   ]
 })
 export class CategoryModule { }

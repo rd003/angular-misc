@@ -4,7 +4,7 @@ import { RegistrationComponent } from "./components/registration/registration.co
 import { NgModule } from "@angular/core";
 
 
-const routes:Routes = [
+const routes: Routes = [
       {
         path: 'login',
         component:LoginComponent
